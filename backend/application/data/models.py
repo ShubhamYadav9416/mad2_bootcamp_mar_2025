@@ -40,19 +40,20 @@ class Book(db.Model):
 
 
 # many-to-many
-student_course = db.Table(
-    "student_course",
-    db.Column("student_id", db.Integer, db.ForeignKey("student.id"), primary_key=True),
-    db.Column("course_id", db.Integer, db.ForeignKey("course.id"), primary_key=True),
-)
+
+
+class StudentCourse(db.Model):
+    student_course_id = db.Column(db.Integer, primary_key=True)
+    student_id =  db.Column(db.Integer, db.ForeignKey("student.id"))
+    course_id =  db.Column(db.Integer, db.ForeignKey("course.id"))
+
+
 
 
 class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(199), nullable=False)
-    courses = db.relationship(
-        "Course", secondary=student_course, backref=db.backref("student")
-    )
+
 
 
 class Course(db.Model):

@@ -12,6 +12,8 @@ from application.security import security, user_datastore
 
 from application.apis.auth.registerAPI import RegisterAPI
 from application.apis.auth.loginAPI import LoginAPI
+from application.apis.studentCourse.studentCourseAPI import AllStudentCourseAPI
+from application.apis.studentCourse.studentCourseAPI import StudentCourseAPI
 
 
 app = Flask(__name__)
@@ -29,6 +31,8 @@ security.init_app(app,user_datastore)
 
 api.add_resource(RegisterAPI, "/api/register")
 api.add_resource(LoginAPI, "/api/login")
+api.add_resource(AllStudentCourseAPI,"/api/studentCourse")
+api.add_resource(StudentCourseAPI,"/api/studentCourse/<int:id>")
 
 
 with app.app_context():
