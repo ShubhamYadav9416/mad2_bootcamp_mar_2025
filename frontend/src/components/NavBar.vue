@@ -18,6 +18,12 @@
                     <li class="nav-item">
                         <RouterLink class="nav-link active" aria-current="page" to="/profile">Profile</RouterLink>
                     </li>
+                    <li class="nav-item">
+                        <RouterLink class="nav-link active" aria-current="page" to="/login">Login</RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink class="nav-link active" aria-current="page" to="/register">Register</RouterLink>
+                    </li>
                 </ul>
             </div>
         </div>
