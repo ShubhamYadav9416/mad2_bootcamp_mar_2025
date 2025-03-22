@@ -7,10 +7,10 @@ import LoginView from "@/view/LoginView.vue";
 import RegisterView from "@/view/RegisterView.vue";
 
 const routes = [
-    {path: "/home", component: HomeView},
-    {path: "/profile", component: ProfileView},
-    {path: "/login", component:LoginView},
-    {path: "/register", component: RegisterView},
+    {path: "/home", name: 'home', component: HomeView},
+    {path: "/profile",name: 'profile', component: ProfileView},
+    {path: "/login",name: 'login', component:LoginView},
+    {path: "/register",name: 'register', component: RegisterView},
     {path: "/:pathMatch(.*)*", component: NotFoundView}
 ]
 

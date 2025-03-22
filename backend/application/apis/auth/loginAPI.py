@@ -32,7 +32,7 @@ class LoginAPI(Resource):
             if not check_password_hash(user.password, password):
                 return jsonify({"status": "failed", "message": "wrong password"})
 
-            access_token = create_access_token(identity=user.id)
+            access_token = create_access_token(identity= str(user.id))
 
             login_user(user)
 
@@ -40,7 +40,9 @@ class LoginAPI(Resource):
                 {
                     "status": "success",
                     "message": "You are now login",
-                    "access_token": access_token
+                    "access_token": access_token,
+                    "user_name": user.name,
+                    "user_mail": user.email
                 }
             )
         except Exception as e:
